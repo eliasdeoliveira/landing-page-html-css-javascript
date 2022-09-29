@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Canaro;
+    src: url('../fonts/Canaro-LightDEMO.eot');
+    src: url('../fonts/Canaro-LightDEMO.eot') format('embedded-opentype'),
+        url('../fonts/Canaro-LightDEMO.woff2') format('woff2'),
+        url('../fonts/Canaro-LightDEMO.woff') format('woff');
+}
+
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
+    font-family: Canaro;
+}
