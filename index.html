@@ -20,6 +20,12 @@
         content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores enim quo dolore quibusdam sint, quos veniam temporibus architecto aspernatur nam ut, est atque eaque fuga voluptatum expedita voluptate fugiat voluptatibus?" />
     <meta name="keywords" content="html, css, javascript, bootstrap" />
     <meta name="author" content="Elias de Oliveira" />
+    <meta property="og:title" content="Newton - Landing Page" />
+    <meta property="og:description"
+        content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores enim quo dolore quibusdam sint, quos veniam temporibus architecto aspernatur nam ut, est atque eaque fuga voluptatum expedita voluptate fugiat voluptatibus?">
+    <meta property="og:url" content="https://eliasdeoliveira.github.io/" />
+    <meta property="og:image" content="./assets/images/icons/icone-site.png" />
+    <meta property="og:type" content="website" />
     <link rel="icon" type="image/x-icon" href="./assets/images/icons/icone-site.png" />
 </head>
 
@@ -45,17 +51,17 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto" style="margin-left: auto">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">
+                                <a class="nav-link" aria-current="page" href="#quem-somos">
                                     Quem somos
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">
+                                <a class="nav-link" aria-current="page" href="#equipe">
                                     Equipe
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="#">
+                                <a class="nav-link" aria-current="page" href="#espaco">
                                     Espaço
                                 </a>
                             </li>
@@ -101,7 +107,7 @@
                 </div>
             </div>
         </section>
-        <section class="mt-5">
+        <section class="mt-5" id="quem-somos">
             <article>
                 <div class="container d-flex align-items-center bloco-mobile">
                     <div>
@@ -130,7 +136,7 @@
                         </article>
                     </div>
                 </div>
-                <div class="container d-flex align-items-center mt-5 bloco-mobile">
+                <div class="container d-flex align-items-center mt-5 bloco-mobile" id="equipe">
                     <div class="px-5 py-5 pl-0-mobile pr-0-mobile">
                         <header>
                             <h1 class="bloco-titulo-1">
@@ -154,7 +160,7 @@
                         <img src="./assets/images/bloco2.png" class="bloco-imagem-destaque" alt="">
                     </div>
                 </div>
-                <div class="container d-flex align-items-center mt-5 bloco-mobile">
+                <div class="container d-flex align-items-center mt-5 bloco-mobile" id="espaco">
                     <div class="container d-flex align-items-center mt-5 pt-5 ">
                         <div class="px-5 py-5 pl-0-mobile pr-0-mobile">
                             <header>
@@ -216,7 +222,7 @@
                 </div>
             </article>
         </section>
-        <section class="mt-5">
+        <section class="mt-5" id="contato">
             <article class="container">
                 <header>
                     <h2 class="contato-titulo text-center">
@@ -330,10 +336,10 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
                     <i class="fa-solid fa-xmark"></i>
                 </a>
-                <a href="#">Quem somos</a>
-                <a href="#">Equipe</a>
-                <a href="#">Espaço</a>
-                <a href="#">Contato</a>
+                <a href="#quem-somos" onclick="closeNav()">Quem somos</a>
+                <a href="#equipe" onclick="closeNav()">Equipe</a>
+                <a href="#espaco" onclick="closeNav()">Espaço</a>
+                <a href="#contato" onclick="closeNav()">Contato</a>
             </div>
         </aside>
     </main>
