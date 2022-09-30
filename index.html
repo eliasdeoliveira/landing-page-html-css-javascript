@@ -9,9 +9,18 @@
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/menu-mobile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/menu-mobile.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <meta name="description"
+        content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores enim quo dolore quibusdam sint, quos veniam temporibus architecto aspernatur nam ut, est atque eaque fuga voluptatum expedita voluptate fugiat voluptatibus?" />
+    <meta name="keywords" content="html, css, javascript, bootstrap" />
+    <meta name="author" content="Elias de Oliveira" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/icons/icone-site.png" />
 </head>
 
 <body>
@@ -19,11 +28,20 @@
         <header class="header">
             <nav class="navbar navbar-expand-lg w-100">
                 <div class="container">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <div class="header-mobile">
+                        <button class="navbar-toggler p-3" onclick="openNav()">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                        <div class="px-2">
+                            <div class="input-pesquisa display-none animate__animated">
+                                <input type="text" name="pesquisa" id="pesquisa">
+                            </div>
+                            <button class="btn btn-link botaoPesquisa animate__animated "
+                                onclick="exibirCampoDePesquisa()">
+                                <img src="./assets/images/icons/icon-feather-search.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto" style="margin-left: auto">
                             <li class="nav-item">
@@ -47,7 +65,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <button class="btn btn-link botaoPesquisa">
+                                <div class="input-pesquisa display-none animate__animated">
+                                    <input type="text" name="pesquisa" id="pesquisa">
+                                </div>
+                                <button class="btn btn-link botaoPesquisa animate__animated "
+                                    onclick="exibirCampoDePesquisa()">
                                     <img src="./assets/images/icons/icon-feather-search.svg" alt="">
                                 </button>
                             </li>
@@ -77,25 +99,15 @@
                         <img src="./assets/images/slide.png" class="d-block w-100" alt="...">
                     </div>
                 </div>
-                <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button> -->
             </div>
         </section>
         <section class="mt-5">
             <article>
-                <div class="container bloco">
+                <div class="container d-flex align-items-center bloco-mobile">
                     <div>
-                        <img src="./assets/images/bloco1.png" alt="">
+                        <img src="./assets/images/bloco1.png" class="bloco-imagem-destaque" alt="">
                     </div>
-                    <div class="px-3 py-5">
+                    <div class="px-5 py-5 pl-0-mobile pr-0-mobile">
                         <header>
                             <h1 class="bloco-titulo-1">
                                 Quem somos
@@ -118,8 +130,8 @@
                         </article>
                     </div>
                 </div>
-                <div class="container bloco mt-5">
-                    <div class="px-3 py-5">
+                <div class="container d-flex align-items-center mt-5 bloco-mobile">
+                    <div class="px-5 py-5 pl-0-mobile pr-0-mobile">
                         <header>
                             <h1 class="bloco-titulo-1">
                                 Nossa equipe
@@ -139,12 +151,12 @@
                         </article>
                     </div>
                     <div>
-                        <img src="./assets/images/bloco2.png" alt="">
+                        <img src="./assets/images/bloco2.png" class="bloco-imagem-destaque" alt="">
                     </div>
                 </div>
-                <div class="bloco-3-imagem-fundo pt-5 mt-5">
-                    <div class="container bloco mt-5 pt-5">
-                        <div class="px-3 py-5">
+                <div class="container d-flex align-items-center mt-5 bloco-mobile">
+                    <div class="container d-flex align-items-center mt-5 pt-5 ">
+                        <div class="px-5 py-5 pl-0-mobile pr-0-mobile">
                             <header>
                                 <h1 class="bloco-titulo-1">
                                     Nossa espaço
@@ -165,21 +177,47 @@
                         </div>
                         <div>
                             <nav>
-                                <button>
+                                <button class="bloco-3-button" data-bs-target="#carouselNossoEspaco"
+                                    data-bs-slide="prev">
                                     <i class="fa-solid fa-arrow-left"></i>
                                 </button>
-                                <button>
+                                <button class="bloco-3-button" data-bs-target="#carouselNossoEspaco"
+                                    data-bs-slide="next">
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </button>
                             </nav>
-                            <img src="./assets/images/bloco3.png" alt="">
+                            <!-- <img src="./assets/images/bloco3.png" class="bloco-imagem-destaque" alt=""> -->
+                            <div id="carouselNossoEspaco" class="carousel slide" data-bs-ride="true">
+                                <div class="carousel-indicators botoesSlides">
+                                    <button type="button" data-bs-target="#carouselNossoEspaco" data-bs-slide-to="0"
+                                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselNossoEspaco" data-bs-slide-to="1"
+                                        aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselNossoEspaco" data-bs-slide-to="2"
+                                        aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="./assets/images/bloco3.png" class="d-block bloco-imagem-destaque"
+                                            alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/images/bloco3.png" class="d-block bloco-imagem-destaque"
+                                            alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./assets/images/bloco3.png" class="d-block bloco-imagem-destaque"
+                                            alt="...">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </article>
         </section>
         <section class="mt-5">
-            <article>
+            <article class="container">
                 <header>
                     <h2 class="contato-titulo text-center">
                         Fale conosco
@@ -191,32 +229,42 @@
                 </header>
                 <nav>
                     <div class="contato-lista-botoes mt-4">
-                        <button class="contato-botao">
+                        <a class="contato-botao" href="tel:+5535998242097">
                             <img src="./assets/images/icons/icon-awesome-phone-alt.svg" alt="telefone"> Telefone
-                        </button>
-                        <button class="contato-botao">
+                        </a>
+                        <a class="contato-botao" href="https://api.whatsapp.com/send?phone=5535998242097&text=Ol%C3%A1!"
+                            target="_blank">
                             <img src="./assets/images/icons/icon-ionic-logo-whatsapp.svg"
                                 alt="icon-ionic-logo-whatsapp"> Whatsapp
-                        </button>
-                        <button class="contato-botao">
+                        </a>
+                        <a class="contato-botao" href="#">
                             <img src="./assets/images/icons/icon-simple-wechat.svg" alt="wechat"> Wechat
-                        </button>
+                        </a>
                     </div>
                 </nav>
                 <article>
-                    <form action="" class="container-sm mt-5">
-                        <div class="row">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div class="row animate__animated display-none" id="mensagem-sucesso-formulario">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-9 m-auto mt-5">
+                            <div class="alert alert-success alert-dismissible text-center fade show" role="alert"
+                                style="background-color: #1ABC9C; color: #fff">
+                                <strong>Parabéns!</strong> Mensagem enviada com sucesso. Em breve entraremos em contato.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+                                    onclick="exibirFormularioDeContato()"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <form method="post" action="#" class="contato mt-5 animate__animated " id="formulario"
+                        onsubmit="validarFormularioContato()">
+                        <div class="row align-items-stretch">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-3">
                                 <div class="mb-3">
-                                    <input type="text" class="input-text" name="nome" id="nome" placeholder="Nome"
-                                        required />
+                                    <input type="text" class="input-text" name="nome" id="nome" placeholder="Nome" />
                                 </div>
                                 <div class="mb-3">
-                                    <input type="email" class="input-text" name="nome" id="nome" placeholder="Email"
-                                        required />
+                                    <input type="email" class="input-text" name="nome" id="nome" placeholder="Email" />
                                 </div>
                                 <div class="input-select">
-                                    <select name="assunto" id="assunto" required>
+                                    <select name="assunto" id="assunto">
                                         <option selected disabled>Selecione</option>
                                         <option value="comercial">Comercial</option>
                                         <option value="financeiro">Financeiro</option>
@@ -225,12 +273,12 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-6">
-                                <textarea class="textarea" name="mensagem" id="mensagem" cols="30" rows="10"
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 mt-3">
+                                <textarea class="textarea" name="mensagem" id="mensagem"
                                     placeholder="Mensagem"></textarea>
                             </div>
                         </div>
-                        <div class="text-end">
+                        <div class="text-end mt-3">
                             <button class="contato-botao-enviar">
                                 Enviar
                             </button>
@@ -239,12 +287,13 @@
                 </article>
             </article>
         </section>
-        <footer class="rodape">
+        <footer class="rodape mt-5">
             <div class="container-sm border-bottom border-white">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="p-2 flex-grow-1 ">
-                        <nav class="d-flex justify-content-center align-items-center" style="max-width: 448px; margin: auto; margin-right: 200px">
-                            <a href="#" >
+                <div class="d-flex align-items-center flex-wrap flex-column-mobile">
+                    <div class="p-2 flex-grow-1">
+                        <nav class="d-flex justify-content-center align-items-center flex-wrap flex-column-mobile rodape-margin-right-25 text-center"
+                            style="max-width: 448px; margin: auto;">
+                            <a href="#">
                                 Quem somos
                             </a>
                             <a href="#">
@@ -255,8 +304,8 @@
                             </a>
                         </nav>
                     </div>
-                    <div class="p-2">
-                        <nav>
+                    <div class="p-2 m-auto">
+                        <nav class="text-center">
                             <a href="#">
                                 <i class="fa-brands fa-linkedin-in"></i>
                             </a>
@@ -276,6 +325,17 @@
                 </p>
             </div>
         </footer>
+        <aside>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+                <a href="#">Quem somos</a>
+                <a href="#">Equipe</a>
+                <a href="#">Espaço</a>
+                <a href="#">Contato</a>
+            </div>
+        </aside>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
